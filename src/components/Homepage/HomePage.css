@@ -1,0 +1,74 @@
+body, html {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  margin-left: 260px;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+}
+
+.main-content {
+    margin-top: 120px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+ 
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+.card h2 {
+  margin: 0 0 10px;
+}
+
+.card .count {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#enroll-btn{
+  background: none;
+  border: 1px solid #181818;
+  color: #181818 ;
+}
+#enroll-btn:hover{
+  background-color: #181818;
+  color: azure;
+}
+.card button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: none;
+  background: #181818;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #fff;
+  color: #181818;
+  border:1px solid #181818 ;
+}

@@ -1,0 +1,19 @@
+#navbar{
+    position: fixed;
+    top: 0;
+    background-color: #181818;
+}
+#avatar{
+    background-color: #c6c6c6;
+    color: #181818;
+}
+#titlename{
+    flex-grow: 1;
+    margin-left: 10px;
+}
+#icon{
+    color: azure;
+}
+#logout_btn{
+    color: azure;
+}

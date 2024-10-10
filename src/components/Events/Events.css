@@ -1,0 +1,49 @@
+#card {
+    height: 50%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
+}
+/* Events.css */
+
+
+
+.news-section {
+  whiteSpace: nowrap;
+  overflow: hidden;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.news-section p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll 100s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.news-section::-webkit-scrollbar {
+  height: 8px;
+}
+
+.news-section::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.news-section::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

@@ -1,0 +1,30 @@
+.sidebar {
+    padding: 12px;
+  width: 260px;
+  background-color: #fff; /* Directly setting the background color */
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 66px;
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Adding a slight shadow for better visual separation */
+}
+
+.nested {
+  padding-left: 32px; /* Directly setting the padding */
+}
+
+.list-item {
+    margin-bottom: 6px;
+    background-color: #dbdbdb;
+    border-radius: 16px;
+    /* border-bottom: 1px solid black; */
+}
+
+.list-item:hover {
+  background-color: #949494; /* Light grey background on hover */
+}
+
+.list-item-text {
+  font-weight: bold; /* Bold text for list items */
+}
