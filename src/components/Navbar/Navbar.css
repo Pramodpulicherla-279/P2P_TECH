@@ -11,6 +11,11 @@
     flex-grow: 1;
     margin-left: 10px;
 }
+#calendar-menu{
+   margin-top: 50px;
+
+}
+
 #icon{
     color: azure;
 }
