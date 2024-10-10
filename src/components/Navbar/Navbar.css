@@ -1,7 +1,8 @@
 #navbar{
     position: fixed;
     top: 0;
-    background-color: #181818;
+    background-color: #18181857;
+  
 }
 #avatar{
     background-color: #c6c6c6;
@@ -17,8 +18,8 @@
 }
 
 #icon{
-    color: azure;
+    color: white;
 }
 #logout_btn{
-    color: azure;
+    color: white;
 }
