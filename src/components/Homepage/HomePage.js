@@ -51,14 +51,18 @@ const HomePage = () => {
         <div className="card">
           <h2>Students</h2>
           <p className="count">{Math.floor(studentCount)}</p>
-          <button id='enroll-btn'>Enroll</button>
-          <button>More</button>
+          <div className="button-group">
+            <button id='enroll-btn'>Enroll</button>
+            <button>More</button>
+          </div>
         </div>
         <div className="card">
           <h2>Teachers</h2>
           <p className="count">{Math.floor(teacherCount)}</p>
-          <button id='enroll-btn'>Enroll</button>
-          <button>More</button>
+          <div className="button-group">
+            <button id='enroll-btn'>Enroll</button>
+            <button>More</button>
+          </div>
         </div>
       </main>
       <Events />

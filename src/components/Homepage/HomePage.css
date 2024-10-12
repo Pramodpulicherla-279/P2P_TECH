@@ -1,7 +1,9 @@
 body, html {
   overflow-x: hidden; /* Prevent horizontal scrolling */
-  background-image: url('./bg-img.jpg');
-  background-size: contain;
+  /* background-image: url('./bg-img.jpg'); */
+  background-size: cover;
+  /* background-color: rgb(235, 235, 235); */
+  background-color: #fefcee;
 } 
 .homepage {
   display: flex;
@@ -18,59 +20,106 @@ body, html {
 }
 
 .main-content {
-    margin-top: 120px;
+    margin-top: 100px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  width: 100%;
+  width: 84%;
  
 }
 
 .card {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: #ffffff33;
+  /* border: 1px solid #ddd; */
+  border-radius: 12px; 
+  padding: 16px 20px;
+  margin: 12px;
+  box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.1);
   width: 300px;
   text-align: center;
 }
 
 .card h2 {
   margin: 0 0 10px;
+  font-size: 20px;
+  border-bottom: 1px solid #374441;
+  padding-bottom: 4px;
+  font-family: "Ramabhadra", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .card .count {
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+
   font-size: 24px;
   font-weight: bold;
   margin: 10px 0;
   transition: opacity 0.5s ease-in-out;
 }
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Adjust the gap as needed */
+}
 
 #enroll-btn{
   background: none;
-  border: 1px solid #181818;
+  border: 1px solid #374441;
   color: #181818 ;
+  font-family: "Ramabhadra", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
 }
 #enroll-btn:hover{
-  background-color: #181818;
+  background-color: #374441;
   color: azure;
 }
 .card button {
-  margin-right: 10px;
-  padding: 10px 20px;
+  padding: 6px 28px;
   border: none;
-  background: #181818;
+  background: #374441;
   color: #fff;
-  border-radius: 4px;
+  border-radius: 4px; 
   cursor: pointer;
+  font-family: "Ramabhadra", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .card button:hover {
-  background-color: #fff;
-  color: #181818;
-  border:1px solid #181818 ;
+  background-color: #ffffff00;
+  color: #374441;
+  border:1px solid #374441 ;
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    margin-top: 100px;
+  padding: 10px;
+
+}
+  .card {
+    width: 200px;
+    padding: 12px;
+  }
+  .card h2 {
+    font-size: 16px;
+  }
+  .card .count {
+    font-size: 18px;
+
+  }
+
+  .card button {
+    padding: 2px 16px;
+  }
+  
+  
 }

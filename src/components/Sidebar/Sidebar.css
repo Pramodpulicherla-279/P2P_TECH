@@ -1,13 +1,41 @@
+
 .sidebar {
-    padding: 12px;
-  width: 260px;
-  background-color: #fff; /* Directly setting the background color */
+    padding: 1%;
+  width: 15%;
+  background-color: #f4f4f4;  
   height: 100vh;
   position: fixed;
-  left: 0;
-  top: 66px;
+  left: 0px;
+  top: 0px;
   overflow-y: auto;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Adding a slight shadow for better visual separation */
+
+}
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  /* background-color: #ffffff; */
+  padding: 16px 12px 0 12px;
+  border-bottom: 1px solid #ccc;  
+
+ 
+}
+
+.profile-card .avatar {
+  width: 60px;
+  height: 60px;
+  
+}
+
+.profile-card .username {
+  margin-top: 16px;
+  color: #333;
+  font-family: "Pacifico", cursive;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 2px;
+  font-size: 18px;
 }
 
 .nested {
@@ -15,16 +43,38 @@
 }
 
 .list-item {
+   
     margin-bottom: 6px;
-    background-color: #dbdbdb;
-    border-radius: 16px;
+    border-radius: 12px; 
     /* border-bottom: 1px solid black; */
 }
 
-.list-item:hover {
-  background-color: #949494; /* Light grey background on hover */
-}
 
-.list-item-text {
-  font-weight: bold; /* Bold text for list items */
+/* Existing styles */
+
+
+@media (max-width: 1024px) {
+  .sidebar {
+    padding: 1%;
+    width: 18%;
+    background-color: #f4f4f4;  
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+  }
+  .profile-card {
+    padding: 12px 8px 0 8px;
+  }
+  .profile-card .avatar {
+    width: 40px;
+    height: 40px;
+    
+  }
+  .profile-card .username {
+    font-size: 16px;
+  }
+
+
 }

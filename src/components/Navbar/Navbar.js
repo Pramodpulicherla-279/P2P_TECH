@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Avatar, Typography, Button, Menu, MenuItem } from '@material-ui/core';
-import { CalendarToday, Notifications, ExitToApp } from '@material-ui/icons';
+import { AppBar, Toolbar, IconButton, Menu, MenuItem } from '@material-ui/core';
+import { Event, Notifications, ExitToApp } from '@material-ui/icons';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -15,14 +15,10 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar id="navbar" position="absolute">
+    <AppBar id="navbar">
       <Toolbar>
-        <Avatar id="avatar" alt="User Name" src="/path/to/avatar.jpg" />
-        <Typography variant="h6" id="titlename">
-          Title Name
-        </Typography>
         <IconButton id="icon" onClick={handleMenuOpen}>
-          <CalendarToday />
+          <Event />
         </IconButton>
         <Menu
           id="calendar-menu"
@@ -42,9 +38,9 @@ const Navbar = () => {
         <IconButton id="icon">
           <Notifications />
         </IconButton>
-        <Button id="logout_btn" startIcon={<ExitToApp />}>
-          Logout
-        </Button>
+        <IconButton id="logout_icon">
+          <ExitToApp />
+        </IconButton>
       </Toolbar>
     </AppBar>
   );

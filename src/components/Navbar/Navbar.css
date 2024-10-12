@@ -1,25 +1,50 @@
 #navbar{
+    box-shadow: none;
     position: fixed;
     top: 0;
-    background-color: #18181857;
-  
+    right: 0;
+    width: 84%;
+    background-color: #f4f4f4;  
+    font-family: "Ramabhadra", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    height: 50px;
+
 }
 #avatar{
-    background-color: #c6c6c6;
-    color: #181818;
+    background-color: #e9e9e9;
+    color: #374441;
 }
 #titlename{
     flex-grow: 1;
-    margin-left: 10px;
+    color: #374441;
+    font-family: "Pacifico", cursive;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 2px;
 }
 #calendar-menu{
    margin-top: 50px;
 
 }
 
+
+
 #icon{
-    color: white;
+    color: #374441;
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+
+    
 }
-#logout_btn{
-    color: white;
+#logout_icon{
+    color: 374441;
+    background-color: #faaa72;
+    width: 30px;
+    height: 30px;
 }
