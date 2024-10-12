@@ -4,6 +4,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
+import Tooltip from '@mui/material/Tooltip';
 import { ExpandLess, ExpandMore, CurrencyRupee, Monitor, Person, School, TrendingUp, Menu, ChevronLeft } from '@mui/icons-material';
 import Avatar from '@mui/material/Avatar';
 import './Sidebar.css'; // Import the CSS file
@@ -42,43 +43,61 @@ const Sidebar = () => {
         {!isSidebarCollapsed && <p className="username">User Name</p>}
       </Box>
       <List component="nav">
-        <ListItem button className="list-item" sx={listItemHoverStyle} onClick={toggleSidebar}>
-          {isSidebarCollapsed ? <Menu /> : <ChevronLeft />}
-        </ListItem>
-        <ListItem button className="list-item" sx={listItemHoverStyle}>
-          <CurrencyRupee sx={{ marginRight: 1 }} />
-          {!isSidebarCollapsed && <ListItemText primary="Student Fee" className="list-item-text" />}
-        </ListItem>
-        <ListItem button className="list-item" sx={listItemHoverStyle}>
-          <Monitor sx={{ marginRight: 1 }} />
-          {!isSidebarCollapsed && <ListItemText primary="Attendance tracking" className="list-item-text" />}
-        </ListItem>
-        <ListItem button className="list-item" sx={listItemHoverStyle}>
-          <Person sx={{ marginRight: 1 }} />
-          {!isSidebarCollapsed && <ListItemText primary="Teacher Leaves" className="list-item-text" />}
-        </ListItem>
-        <ListItem button onClick={toggleDropdown} className="list-item" sx={listItemHoverStyle}>
-          <School sx={{ marginRight: 1 }} />
-          {!isSidebarCollapsed && <ListItemText primary="Academic Management" className="list-item-text" />}
-          {!isSidebarCollapsed && (isDropdownOpen ? <ExpandLess /> : <ExpandMore />)}
-        </ListItem>
+        <Tooltip title={isSidebarCollapsed ? "Expand Sidebar" : "Collapse Sidebar"} placement="right">
+          <ListItem button className="list-item" sx={listItemHoverStyle} onClick={toggleSidebar}>
+            {isSidebarCollapsed ? <Menu /> : <ChevronLeft />}
+          </ListItem>
+        </Tooltip>
+        <Tooltip title="Student Fee" placement="right">
+          <ListItem button className="list-item" sx={listItemHoverStyle}>
+            <CurrencyRupee sx={{ marginRight: 1 }} />
+            {!isSidebarCollapsed && <ListItemText primary="Student Fee" className="list-item-text" />}
+          </ListItem>
+        </Tooltip>
+        <Tooltip title="Attendance tracking" placement="right">
+          <ListItem button className="list-item" sx={listItemHoverStyle}>
+            <Monitor sx={{ marginRight: 1 }} />
+            {!isSidebarCollapsed && <ListItemText primary="Attendance tracking" className="list-item-text" />}
+          </ListItem>
+        </Tooltip>
+        <Tooltip title="Teacher Leaves" placement="right">
+          <ListItem button className="list-item" sx={listItemHoverStyle}>
+            <Person sx={{ marginRight: 1 }} />
+            {!isSidebarCollapsed && <ListItemText primary="Teacher Leaves" className="list-item-text" />}
+          </ListItem>
+        </Tooltip>
+        <Tooltip title="Academic Management" placement="right">
+          <ListItem button onClick={toggleDropdown} className="list-item" sx={listItemHoverStyle}>
+            <School sx={{ marginRight: 1 }} />
+            {!isSidebarCollapsed && <ListItemText primary="Academic Management" className="list-item-text" />}
+            {!isSidebarCollapsed && (isDropdownOpen ? <ExpandLess /> : <ExpandMore />)}
+          </ListItem>
+        </Tooltip>
         <Collapse in={isDropdownOpen && !isSidebarCollapsed} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItem button className="nested list-item" style={nestedListItemStyle} sx={listItemHoverStyle}>
-              <ListItemText primary="Schedule Teacher" className="nested-list-item-text" sx={nestedListItemTextStyle} />
-            </ListItem>
-            <ListItem button className="nested list-item" style={nestedListItemStyle} sx={listItemHoverStyle}>
-              <ListItemText primary="Time Table" className="nested-list-item-text" sx={nestedListItemTextStyle} />
-            </ListItem>
-            <ListItem button className="nested list-item" style={nestedListItemStyle} sx={listItemHoverStyle}>
-              <ListItemText primary="Subject Allocation" className="nested-list-item-text" sx={nestedListItemTextStyle} />
-            </ListItem>
+            <Tooltip title="Schedule Teacher" placement="right">
+              <ListItem button className="nested list-item" style={nestedListItemStyle} sx={listItemHoverStyle}>
+                <ListItemText primary="Schedule Teacher" className="nested-list-item-text" sx={nestedListItemTextStyle} />
+              </ListItem>
+            </Tooltip>
+            <Tooltip title="Time Table" placement="right">
+              <ListItem button className="nested list-item" style={nestedListItemStyle} sx={listItemHoverStyle}>
+                <ListItemText primary="Time Table" className="nested-list-item-text" sx={nestedListItemTextStyle} />
+              </ListItem>
+            </Tooltip>
+            <Tooltip title="Subject Allocation" placement="right">
+              <ListItem button className="nested list-item" style={nestedListItemStyle} sx={listItemHoverStyle}>
+                <ListItemText primary="Subject Allocation" className="nested-list-item-text" sx={nestedListItemTextStyle} />
+              </ListItem>
+            </Tooltip>
           </List>
         </Collapse>
-        <ListItem button className="list-item" sx={listItemHoverStyle}>
-          <TrendingUp sx={{ marginRight: 1 }} />
-          {!isSidebarCollapsed && <ListItemText primary="Student Performance" className="list-item-text" />}
-        </ListItem>
+        <Tooltip title="Student Performance" placement="right">
+          <ListItem button className="list-item" sx={listItemHoverStyle}>
+            <TrendingUp sx={{ marginRight: 1 }} />
+            {!isSidebarCollapsed && <ListItemText primary="Student Performance" className="list-item-text" />}
+          </ListItem>
+        </Tooltip>
       </List>
     </Box>
   );

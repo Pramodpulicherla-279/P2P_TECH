@@ -1,6 +1,6 @@
 body, html {
   overflow-x: hidden; /* Prevent horizontal scrolling */
-  /* background-image: url('./bg-img.jpg'); */
+  /* background-image: url('./img.jpg'); */
   background-size: cover;
   /* background-color: rgb(235, 235, 235); */
   background-color: #fefcee;
@@ -31,7 +31,7 @@ body, html {
 }
 
 .card {
-  background: #ffffff33;
+  background: #ffffff50;
   /* border: 1px solid #ddd; */
   border-radius: 12px; 
   padding: 16px 20px;
