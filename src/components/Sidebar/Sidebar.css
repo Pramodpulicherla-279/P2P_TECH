@@ -9,6 +9,11 @@
   top: 0px;
   overflow-y: auto;
 
+  transition: width 0.3s ease-in-out;
+
+}
+.sidebar.collapsed {
+  width: 60px;
 }
 .profile-card {
   display: flex;
@@ -16,17 +21,25 @@
   align-items: center;
   margin-bottom: 20px;
   /* background-color: #ffffff; */
-  padding: 16px 12px 0 12px;
+  padding-top: 40px ;
   border-bottom: 1px solid #ccc;  
 
- 
 }
 
+.profile-card.collapsed {
+  border-bottom: none;
+}
 .profile-card .avatar {
   width: 60px;
   height: 60px;
   
 }
+.sidebar.collapsed .avatar {
+  transition: width 0.3s ease-in-out;
+  width: 40px;
+  height: 40px;
+}
+
 
 .profile-card .username {
   margin-top: 16px;
@@ -43,8 +56,8 @@
 }
 
 .list-item {
-   
     margin-bottom: 6px;
+
     border-radius: 12px; 
     /* border-bottom: 1px solid black; */
 }
@@ -64,9 +77,7 @@
     top: 0;
     overflow-y: auto;
   }
-  .profile-card {
-    padding: 12px 8px 0 8px;
-  }
+
   .profile-card .avatar {
     width: 40px;
     height: 40px;

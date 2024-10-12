@@ -11,7 +11,7 @@ body, html {
   align-items: center;
   justify-content: flex-start;
   height: 100vh;
-  margin-left: 260px;
+  /* margin-left: 260px; */
 }
 
 .content {
@@ -26,7 +26,7 @@ body, html {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  width: 84%;
+  width: 100%;
  
 }
 

@@ -4,17 +4,21 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
-import { ExpandLess, ExpandMore } from '@mui/icons-material';
+import { ExpandLess, ExpandMore, CurrencyRupee, Monitor, Person, School, TrendingUp, Menu, ChevronLeft } from '@mui/icons-material';
 import Avatar from '@mui/material/Avatar';
 import './Sidebar.css'; // Import the CSS file
 
 const Sidebar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const toggleSidebar = () => {
+    setIsSidebarCollapsed(!isSidebarCollapsed);
+  };
 
   const nestedListItemStyle = {
     backgroundColor: '#faaa72',
@@ -32,26 +36,33 @@ const Sidebar = () => {
   };
 
   return (
-    <Box className="sidebar">
-      <Box className="profile-card">
+    <Box className={`sidebar ${isSidebarCollapsed ? 'collapsed' : ''}`}>
+      <Box className={`profile-card ${isSidebarCollapsed ? 'collapsed' : ''}`}>
         <Avatar alt="User Name" src="/static/images/avatar/1.jpg" className="avatar" />
-        <p className="username">User Name</p>
+        {!isSidebarCollapsed && <p className="username">User Name</p>}
       </Box>
       <List component="nav">
-        <ListItem button className="list-item" sx={listItemHoverStyle}>
-          <ListItemText primary="Student Fee" className="list-item-text"  />
+        <ListItem button className="list-item" sx={listItemHoverStyle} onClick={toggleSidebar}>
+          {isSidebarCollapsed ? <Menu /> : <ChevronLeft />}
         </ListItem>
         <ListItem button className="list-item" sx={listItemHoverStyle}>
-          <ListItemText primary="Attendance tracking" className="list-item-text"  />
+          <CurrencyRupee sx={{ marginRight: 1 }} />
+          {!isSidebarCollapsed && <ListItemText primary="Student Fee" className="list-item-text" />}
         </ListItem>
         <ListItem button className="list-item" sx={listItemHoverStyle}>
-          <ListItemText primary="Teacher Leaves" className="list-item-text"/>
+          <Monitor sx={{ marginRight: 1 }} />
+          {!isSidebarCollapsed && <ListItemText primary="Attendance tracking" className="list-item-text" />}
+        </ListItem>
+        <ListItem button className="list-item" sx={listItemHoverStyle}>
+          <Person sx={{ marginRight: 1 }} />
+          {!isSidebarCollapsed && <ListItemText primary="Teacher Leaves" className="list-item-text" />}
         </ListItem>
         <ListItem button onClick={toggleDropdown} className="list-item" sx={listItemHoverStyle}>
-          <ListItemText primary="Academic Management" className="list-item-text" />
-          {isDropdownOpen ? <ExpandLess /> : <ExpandMore />}
+          <School sx={{ marginRight: 1 }} />
+          {!isSidebarCollapsed && <ListItemText primary="Academic Management" className="list-item-text" />}
+          {!isSidebarCollapsed && (isDropdownOpen ? <ExpandLess /> : <ExpandMore />)}
         </ListItem>
-        <Collapse in={isDropdownOpen} timeout="auto" unmountOnExit>
+        <Collapse in={isDropdownOpen && !isSidebarCollapsed} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             <ListItem button className="nested list-item" style={nestedListItemStyle} sx={listItemHoverStyle}>
               <ListItemText primary="Schedule Teacher" className="nested-list-item-text" sx={nestedListItemTextStyle} />
@@ -65,7 +76,8 @@ const Sidebar = () => {
           </List>
         </Collapse>
         <ListItem button className="list-item" sx={listItemHoverStyle}>
-          <ListItemText primary="Student Performance" className="list-item-text"  />
+          <TrendingUp sx={{ marginRight: 1 }} />
+          {!isSidebarCollapsed && <ListItemText primary="Student Performance" className="list-item-text" />}
         </ListItem>
       </List>
     </Box>
