@@ -6,6 +6,7 @@ import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import DetailsForm from './DetailsForm';
 import Sidebar from '../Sidebar/Sidebar'; // Import Sidebar
+import Navbar from '../Navbar/Navbar'; // Import Navbar
 
 function Copyright() {
   return (
@@ -62,8 +63,13 @@ export default function StudentEnrollForm() {
     setIsSubmitted(true);
   };
 
+  const handleEnrollMore = () => {
+    setIsSubmitted(false);
+  };
+
   return (
     <React.Fragment>
+      <Navbar /> {/* Add Navbar */}
       <main className={classes.layout}>
         <Sidebar visibleItems={['home']} hideProfile={true} /> {/* Add Sidebar */}
         <Paper className={classes.paper}>
@@ -78,6 +84,16 @@ export default function StudentEnrollForm() {
               <Typography variant="subtitle1">
                 Enjoy your journey
               </Typography>
+              <div className={classes.buttons}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handleEnrollMore}
+                  className={classes.button}
+                >
+                  Enroll More
+                </Button>
+              </div>
             </React.Fragment>
           ) : (
             <React.Fragment>

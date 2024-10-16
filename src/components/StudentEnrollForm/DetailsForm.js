@@ -4,6 +4,8 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
 
+const classesOptions = Array.from({ length: 12 }, (_, i) => i + 1);
+
 export default function DetailsForm() {
   return (
     <React.Fragment>
@@ -58,6 +60,22 @@ export default function DetailsForm() {
             }}
           />
         </Grid>
+        <Grid item xs={12} sm={6}>
+          <TextField
+            required
+            id="studentClass"
+            name="studentClass"
+            label="Class"
+            select
+            fullWidth
+          >
+            {classesOptions.map((cls) => (
+              <MenuItem key={cls} value={cls}>
+                Class {cls}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Grid>
         <Grid item xs={12}>
           <TextField
             required
@@ -110,7 +128,6 @@ export default function DetailsForm() {
             autoComplete="shipping country"
           />
         </Grid>
-        
       </Grid>
     </React.Fragment>
   );

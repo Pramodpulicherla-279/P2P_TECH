@@ -3,7 +3,7 @@ body, html {
   /* background-image: url('./img.jpg'); */
   background-size: cover;
   /* background-color: rgb(235, 235, 235); */
-  background-color: #fefcee;
+  background-color: #fcfcfc;
 } 
 .homepage {
   display: flex;
@@ -31,12 +31,12 @@ body, html {
 }
 
 .card {
-  background: #ffffff50;
-  /* border: 1px solid #ddd; */
+  background: #fff;
+  border: 1px solid hsla(220, 20%, 80%, 0.4);
   border-radius: 12px; 
   padding: 16px 20px;
   margin: 12px;
-  box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.1); */
   width: 300px;
   text-align: center;
 }
@@ -44,7 +44,7 @@ body, html {
 .card h2 {
   margin: 0 0 10px;
   font-size: 20px;
-  border-bottom: 1px solid #374441;
+  border-bottom: 1px solid hsla(220, 20%, 80%, 0.4);
   padding-bottom: 4px;
   font-family: "Ramabhadra", sans-serif;
   font-weight: 400;

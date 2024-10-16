@@ -10,6 +10,8 @@ import Typography from '@material-ui/core/Typography';
 import DetailsForm from './DetailsForm';
 import QualificationForm from './QualificationForm';
 import Sidebar from '../Sidebar/Sidebar'; // Import Sidebar
+import Navbar from '../Navbar/Navbar'; // Import Navbar
+
 
 function Copyright() {
   return (
@@ -86,8 +88,13 @@ export default function EnrollForm() {
     setActiveStep(activeStep - 1);
   };
 
+  const handleEnrollMore = () => {
+    setActiveStep(0);
+  };
+
   return (
     <React.Fragment>
+     <Navbar /> {/* Add Navbar */}
       <main className={classes.layout}>
         <Sidebar visibleItems={['home']} hideProfile={true} /> {/* Add Sidebar */}
         <Paper className={classes.paper}>
@@ -108,8 +115,18 @@ export default function EnrollForm() {
                   Submitted successfully
                 </Typography>
                 <Typography variant="subtitle1">
-                 Enjoy your journey
+                  Enjoy your journey
                 </Typography>
+                <div className={classes.buttons}>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleEnrollMore}
+                    className={classes.button}
+                  >
+                    Enroll More
+                  </Button>
+                </div>
               </React.Fragment>
             ) : (
               <React.Fragment>

@@ -6,7 +6,7 @@
 height: 41.5vh; /* Set a maximum height for the card */
   overflow-y: auto; /* Enable vertical scrolling */
   padding: 10px; /* Optional: Add some padding */
-  border: 1px solid #ddd; /* Optional: Add a border for better visual separation */
+  border: 1px solid hsla(220, 20%, 80%, 0.4); /* Optional: Add a border for better visual separation */
   border-radius: 12px; 
 }
 /* Events.css */

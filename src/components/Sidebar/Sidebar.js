@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -7,13 +7,20 @@ import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
 import Tooltip from '@mui/material/Tooltip';
 import { ExpandLess, ExpandMore, CurrencyRupee, Monitor, Person, School, TrendingUp, Menu, ChevronLeft, Home } from '@mui/icons-material';
-import Avatar from '@mui/material/Avatar';
 import './Sidebar.css'; // Import the CSS file
 
 const Sidebar = ({ visibleItems = [], hideProfile = false }) => { // Add hideProfile prop
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const [selectedItem, setSelectedItem] = useState('');
+
+  useEffect(() => {
+    if (location.pathname === '/') {
+      setSelectedItem('home');
+    }
+  }, [location.pathname]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -25,6 +32,7 @@ const Sidebar = ({ visibleItems = [], hideProfile = false }) => { // Add hidePro
 
   const navigateToHomepage = () => {
     navigate('/');
+    setSelectedItem('home');
   };
 
   const nestedListItemStyle = {
@@ -42,14 +50,12 @@ const Sidebar = ({ visibleItems = [], hideProfile = false }) => { // Add hidePro
     },
   };
 
+  const selectedListItemStyle = {
+    backgroundColor: '#ff8040',
+  };
+
   return (
     <Box className={`sidebar ${isSidebarCollapsed ? 'collapsed' : ''}`}>
-      {!hideProfile && (
-        <Box className={`profile-card ${isSidebarCollapsed ? 'collapsed' : ''}`}>
-          <Avatar alt="User Name" src="/static/images/avatar/1.jpg" className="avatar" />
-          {!isSidebarCollapsed && <p className="username">School Name</p>}
-        </Box>
-      )}
       <List component="nav">
         <Tooltip title={isSidebarCollapsed ? "Expand Sidebar" : "Collapse Sidebar"} placement="right">
           <ListItem button className="list-item" sx={listItemHoverStyle} onClick={toggleSidebar}>
@@ -58,7 +64,12 @@ const Sidebar = ({ visibleItems = [], hideProfile = false }) => { // Add hidePro
         </Tooltip>
         {visibleItems.includes('home') && (
           <Tooltip title="Home" placement="right">
-            <ListItem button className="list-item" sx={listItemHoverStyle} onClick={navigateToHomepage}>
+            <ListItem
+              button
+              className="list-item"
+              sx={selectedItem === 'home' ? selectedListItemStyle : listItemHoverStyle}
+              onClick={navigateToHomepage}
+            >
               <Home sx={{ marginRight: 1 }} />
               {!isSidebarCollapsed && <ListItemText primary="Home" className="list-item-text" />}
             </ListItem>
