@@ -45,8 +45,12 @@ const HomePage = () => {
     };
   }, []);
 
-  const handleEnrollClick = () => {
-    navigate('/enroll');
+  const handleStudentEnrollClick = () => {
+    navigate('/student-enroll');
+  };
+
+  const handleTeacherEnrollClick = () => {
+    navigate('/teacher-enroll');
   };
 
   return (
@@ -58,7 +62,7 @@ const HomePage = () => {
           <h2>Students</h2>
           <p className="count">{Math.floor(studentCount)}</p>
           <div className="button-group">
-            <button id='enroll-btn'>Enroll</button>
+            <button id='enroll-btn' onClick={handleStudentEnrollClick}>Enroll</button>
             <button>More</button>
           </div>
         </div>
@@ -66,7 +70,7 @@ const HomePage = () => {
           <h2>Teachers</h2>
           <p className="count">{Math.floor(teacherCount)}</p>
           <div className="button-group">
-            <button id='enroll-btn' onClick={handleEnrollClick}>Enroll</button>
+            <button id='enroll-btn' onClick={handleTeacherEnrollClick}>Enroll</button>
             <button>More</button>
           </div>
         </div>

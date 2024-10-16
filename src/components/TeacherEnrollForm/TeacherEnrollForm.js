@@ -29,19 +29,18 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
   },
   layout: {
-    display: 'flex', // Add flex display to layout
-    width: 'auto',
-    marginLeft: theme.spacing(2),
-    marginRight: theme.spacing(2),
-    [theme.breakpoints.up(600 + theme.spacing(2) * 2)]: {
-      width: 600,
-      marginLeft: 'auto',
-      marginRight: 'auto',
-    },
+    display: 'flex',
+    flexDirection: 'row', // Ensure Sidebar and form are in a row
+    justifyContent: 'center', // Center horizontally
+    alignItems: 'center', // Center vertically
+    height: '100vh', // Full viewport height
+    width: '100%', // Full viewport width
+    padding: theme.spacing(2),
   },
   paper: {
-    marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(3),
+    width: '100%',
+    maxWidth: 600, // Max width of the form
+    margin: theme.spacing(3),
     padding: theme.spacing(2),
     [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
       marginTop: theme.spacing(6),
