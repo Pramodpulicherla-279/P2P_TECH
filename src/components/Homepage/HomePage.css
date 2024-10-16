@@ -64,7 +64,7 @@ body, html {
 }
 .button-group {
   display: flex;
-  justify-content: center;
+  justify-content: center !important;
   gap: 10px; /* Adjust the gap as needed */
 }
 
