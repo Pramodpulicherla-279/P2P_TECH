@@ -52,6 +52,18 @@ const useStyles = makeStyles((theme) => ({
   button: {
     marginTop: theme.spacing(3),
     marginLeft: theme.spacing(1),
+    backgroundColor: '#ff8040', // Change the color of the Enroll More button
+    color: '#fff',
+    '&:hover': {
+      backgroundColor: '#faaa72',
+    }
+  },
+  enrollMoreButton: {
+    backgroundColor: '#ff8040', // Change the color of the Enroll More button
+    color: '#fff',
+    '&:hover': {
+      backgroundColor: '#faaa72',
+    },
   },
 }));
 
@@ -87,9 +99,8 @@ export default function StudentEnrollForm() {
               <div className={classes.buttons}>
                 <Button
                   variant="contained"
-                  color="primary"
                   onClick={handleEnrollMore}
-                  className={classes.button}
+                  className={`${classes.button} ${classes.enrollMoreButton}`} // Apply the new style
                 >
                   Enroll More
                 </Button>

@@ -12,7 +12,6 @@ import QualificationForm from './QualificationForm';
 import Sidebar from '../Sidebar/Sidebar'; // Import Sidebar
 import Navbar from '../Navbar/Navbar'; // Import Navbar
 
-
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -38,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh', // Full viewport height
     width: '100%', // Full viewport width
     padding: theme.spacing(2),
+    
   },
   paper: {
     width: '100%',
@@ -49,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: theme.spacing(6),
       padding: theme.spacing(3),
     },
+    
   },
   stepper: {
     padding: theme.spacing(3, 0, 5),
@@ -60,6 +61,11 @@ const useStyles = makeStyles((theme) => ({
   button: {
     marginTop: theme.spacing(3),
     marginLeft: theme.spacing(1),
+    backgroundColor: '#ff8040', // Change button color
+    color: 'white', // Change text color
+    '&:hover': {
+      backgroundColor: '#faaa72', // Change button color on hover
+    },
   },
 }));
 
@@ -94,7 +100,7 @@ export default function EnrollForm() {
 
   return (
     <React.Fragment>
-     <Navbar /> {/* Add Navbar */}
+      <Navbar /> {/* Add Navbar */}
       <main className={classes.layout}>
         <Sidebar visibleItems={['home']} hideProfile={true} /> {/* Add Sidebar */}
         <Paper className={classes.paper}>
@@ -120,7 +126,6 @@ export default function EnrollForm() {
                 <div className={classes.buttons}>
                   <Button
                     variant="contained"
-                    color="primary"
                     onClick={handleEnrollMore}
                     className={classes.button}
                   >
@@ -139,7 +144,6 @@ export default function EnrollForm() {
                   )}
                   <Button
                     variant="contained"
-                    color="primary"
                     onClick={handleNext}
                     className={classes.button}
                   >
