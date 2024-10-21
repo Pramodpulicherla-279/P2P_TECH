@@ -62,13 +62,13 @@
   
   }
   #enroll-btn:hover{
-    background-color: #374441;
-    color: azure;
+    background-color: #95b0b5;
+    color: #fff;
   }
   .card button {
     padding: 4px 28px;
     border: none;
-    background: #374441;
+    background: #95b0b5;
     color: #fff;
     border-radius: 4px; 
     cursor: pointer;

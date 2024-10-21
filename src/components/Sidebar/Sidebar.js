@@ -32,12 +32,12 @@ const Sidebar = ({ visibleItems = [], hideProfile = false }) => { // Add hidePro
   const listItemHoverStyle = {
     transition: 'background-color 0.3s ease-in-out',
     '&:hover': {
-      backgroundColor: '#ff8040',
+      backgroundColor: '#95b0b5',
     },
   };
 
   const selectedListItemStyle = {
-    backgroundColor: '#ff8040',
+    backgroundColor: '#95b0b5',
   };
 
   return (

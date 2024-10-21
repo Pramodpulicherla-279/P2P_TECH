@@ -76,7 +76,8 @@
 }
 
 #logout_icon{
-    background-color: #ff8040;
+    color: azure;
+    background-color: #95b0b5;
     width: 40px;
     height: 40px;
 }
