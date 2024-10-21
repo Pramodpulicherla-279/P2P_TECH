@@ -1,13 +1,13 @@
 #card {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 40%;
-height: 41.5vh; /* Set a maximum height for the card */
+  position: relative;
+  width: 60%;
+height: 40vh; /* Set a maximum height for the card */
   overflow-y: auto; /* Enable vertical scrolling */
   padding: 10px; /* Optional: Add some padding */
   border: 1px solid hsla(220, 20%, 80%, 0.4); /* Optional: Add a border for better visual separation */
   border-radius: 12px; 
+  margin-bottom: 30px;
+
 }
 /* Events.css */
 
@@ -26,7 +26,7 @@ height: 41.5vh; /* Set a maximum height for the card */
   box-sizing: border-box;
   margin-bottom: 10px;
   border-radius: 12px;
-  width: 39%;
+  width: 59%;
   z-index: 1000;
 
   

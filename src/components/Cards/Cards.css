@@ -1,0 +1,107 @@
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, auto); /* 2 rows */
+    justify-content: center; /* Distributes the cards evenly */
+    align-items: center;
+  }
+
+.card {
+    background: #fff;
+    border: 1px solid hsla(220, 20%, 80%, 0.4);
+    border-radius: 12px; 
+    padding: 16px 20px;
+    margin: 12px;
+    /* box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.1); */
+    width: 260px;
+    height: 120px; 
+    text-align: center;
+    position: relative;
+  }
+  
+  .card h2 {
+    margin: 0 0 2px;
+    font-size: 20px;
+    border-bottom: 1px solid hsla(220, 20%, 80%, 0.4);
+    padding-bottom: 2px;
+    font-family: "Ramabhadra", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .card .count {
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute; /* Position the button group absolutely */
+    bottom: 20px; /* Adjust the bottom position as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 10px;
+  }
+  
+  #enroll-btn{
+    background: none;
+    border: 1px solid #374441;
+    color: #181818 ;
+    font-family: "Ramabhadra", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  
+  }
+  #enroll-btn:hover{
+    background-color: #374441;
+    color: azure;
+  }
+  .card button {
+    padding: 4px 28px;
+    border: none;
+    background: #374441;
+    color: #fff;
+    border-radius: 4px; 
+    cursor: pointer;
+    font-family: "Ramabhadra", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .card button:hover {
+    background-color: #ffffff00;
+    color: #374441;
+    border:1px solid #374441 ;
+  }
+  
+
+  @media (max-width: 1024px) {
+    .card {
+      width: 200px;
+      padding: 12px;
+    }
+    .card h2 {
+      font-size: 16px;
+    }
+    .card .count {
+      font-size: 18px;
+  
+    }
+  
+    .card button {
+      padding: 2px 16px;
+    }
+    
+    
+  }
+  
+  

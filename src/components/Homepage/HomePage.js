@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import Sidebar from '../Sidebar/Sidebar';
 import Events from '../Events/Events';
+import Cards from '../Cards/Cards';
 import './HomePage.css';
 
 const HomePage = () => {
   const [studentCount, setStudentCount] = useState(0);
   const [teacherCount, setTeacherCount] = useState(0);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const targetStudentCount = 150;
@@ -45,35 +44,12 @@ const HomePage = () => {
     };
   }, []);
 
-  const handleStudentEnrollClick = () => {
-    navigate('/student-enroll');
-  };
-
-  const handleTeacherEnrollClick = () => {
-    navigate('/teacher-enroll');
-  };
-
   return (
     <div className="homepage">
       <Navbar />
-      <Sidebar visibleItems={['home', 'studentFee', 'attendanceTracking', 'teacherLeaves', 'academicManagement', 'studentPerformance']} />
+      <Sidebar visibleItems={['home', 'attachDocument', 'subjectAllocation', 'attendanceTracking', 'leaveApprovals', 'academicPerformance','teacherAlert']} />
       <main className="main-content">
-        <div className="card">
-          <h2>Students</h2>
-          <p className="count">{Math.floor(studentCount)}</p>
-          <div className="button-group">
-            <button id='enroll-btn' onClick={handleStudentEnrollClick}>Enroll</button>
-            <button>More</button>
-          </div>
-        </div>
-        <div className="card">
-          <h2>Teachers</h2>
-          <p className="count">{Math.floor(teacherCount)}</p>
-          <div className="button-group">
-            <button id='enroll-btn' onClick={handleTeacherEnrollClick}>Enroll</button>
-            <button>More</button>
-          </div>
-        </div>
+        <Cards studentCount={studentCount} teacherCount={teacherCount} />
       </main>
       <Events />
     </div>

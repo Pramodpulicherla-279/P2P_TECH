@@ -7,7 +7,7 @@
   width: 100%;
 
     justify-content: center;
-    height: 50px;
+    height: 60px;
     border: 1px solid hsla(220, 20%, 80%, 0.4);
 
 }
@@ -17,9 +17,36 @@
   align-items: center;
   flex-grow: 1;
 }
+.navbar-left Button{
+  /* border: 1px solid #ccc; */
+  background-color: #fff;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
 #avatar{
   height: 30px;
   width: 30px;
+}
+
+.profile-card {
+  padding: 20px;
+  text-align: center;
+  width: 500px;
+}
+
+#profile-avatar {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+#profile-name {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+#profile-description {
+  margin-top: 10px;
+  color: #555;
 }
 
 #name{
